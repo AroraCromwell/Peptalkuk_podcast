@@ -11,6 +11,7 @@ node_modules
 test/YOUTUBE_API_KEY
 dist
 .idea
+output.xml
 # Logs
 logs
 *.log
