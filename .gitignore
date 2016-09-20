@@ -1,0 +1,12 @@
+.DS_Store
+logs
+*.log
+pids
+*.pid
+*.seed
+lib-cov
+coverage
+.lock-wscript
+node_modules
+test/YOUTUBE_API_KEY
+dist

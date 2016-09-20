@@ -1,0 +1,9 @@
+{
+  "server": {
+    "port": 7000
+  },
+  "runTime": "* 18 * * *",
+  "env": {
+    "status": "Production"
+  }
+}
