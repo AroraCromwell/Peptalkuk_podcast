@@ -5,8 +5,19 @@ import YoutubePodcast from '../src/index';
 import config  from '../src/config.json';
 import nodeSchedule from "node-schedule";
 import {SendMail} from "../src/lib/sendMail";
+var connect = require('connect');
+var serveStatic = require('serve-static');
+import express from "express";
 
 let sendMail = new SendMail();
+var app = express();
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 
 nodeSchedule.scheduleJob(config.runTime, function () {
     let yp = new YoutubePodcast(
@@ -42,3 +53,15 @@ nodeSchedule.scheduleJob(config.runTime, function () {
         // process.exit();
     });
 });
+
+
+app.get('/index', function (req, res) {
+    res.set('Content-Type', 'text/xml');
+    res.send(fs.readFileSync('./output.xml', {encoding: 'utf-8'}))
+});
+
+app.listen(7000);
+console.log('Server running on 7000...');
+// connect().use(serveStatic(__dirname)).listen(7000, function(){
+//     console.log('Server running on 7000...');
+// });
