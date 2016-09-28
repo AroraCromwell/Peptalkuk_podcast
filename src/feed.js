@@ -42,9 +42,9 @@ export default function build(info, videos, buildURLFunction, callback)
 				"link": [info.site]
 			}],
 			"itunes:image": [{ "$": { "href": "http://synergydatalinks.com/images/peptalk_1400x1400.jpg" } }],
-			"category": [ "Sports & Hobbies" ],
+			"category": [ "Sports & Recreation" ],
 			"itunes:category": [
-				{ "$": { "text": "Sports & Hobbies" } },
+				{ "$": { "text": "Sports & Recreation" } },
             ],
 			"itunes:explicit": ["no"],
 			"item": []
@@ -71,7 +71,7 @@ export default function build(info, videos, buildURLFunction, callback)
 			}],
 			"guid": [buildURLFunction(video.id)],
 			"pubDate": [video.publishedAt],//'Tue, 21 Apr 2015 15:50:25 +0200'
-			"category": ["Sports & Hobbies"],
+			"category": ["Sports & Recreation"],
 			"itunes:explicit": ["no"],
 			"itunes:duration": [video.duration],
 			"itunes:keywords": ['YouTube']
