@@ -53,6 +53,12 @@ export default function build(info, videos, buildURLFunction, callback)
 
 	rss.channel[0].item = videos.map(function(video)
 	{
+	    let finalBuildURLFunction;
+            if(video.id == "lXnhjXSM0es") {
+                finalBuildURLFunction = "synergydatalinks.com";
+            }else{
+                finalBuildURLFunction = buildURLFunction ;
+            }
 		return {
 			"title": [video.title],
 			"itunes:author": [author],
@@ -64,7 +70,7 @@ export default function build(info, videos, buildURLFunction, callback)
 			{
 				"$":
 				{
-					"url": buildURLFunction(video.id + ".mp4"),
+					"url": finalBuildURLFunction(video.id + ".mp4"),
 					"type": video.type,
 					"length": video.length
 				}
