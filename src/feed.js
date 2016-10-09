@@ -23,7 +23,7 @@ export default function build(info, videos, buildURLFunction, callback)
 				}
 			}],
 			"lastBuildDate": [info.publishedAt],
-			"title": [info.title],
+			"title": "PepTalkUk Podcast",
 			"itunes:author": [info.title],
 			"link": [info.site],
 			"description": [info.description],
